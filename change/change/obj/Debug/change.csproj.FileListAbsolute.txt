@@ -1,0 +1,9 @@
+C:\Users\you\Desktop\change\change\bin\Debug\change.exe.config
+C:\Users\you\Desktop\change\change\bin\Debug\change.exe
+C:\Users\you\Desktop\change\change\bin\Debug\change.pdb
+C:\Users\you\Desktop\change\change\obj\Debug\change.csprojResolveAssemblyReference.cache
+C:\Users\you\Desktop\change\change\obj\Debug\change.Form1.resources
+C:\Users\you\Desktop\change\change\obj\Debug\change.Properties.Resources.resources
+C:\Users\you\Desktop\change\change\obj\Debug\change.csproj.GenerateResource.Cache
+C:\Users\you\Desktop\change\change\obj\Debug\change.exe
+C:\Users\you\Desktop\change\change\obj\Debug\change.pdb
