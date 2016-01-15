@@ -5,8 +5,7 @@
 
 看小說寫的程式，簡轉繁之後還有許多錯字或標點符號要修改  
 
-change\change\bin\Debug   
-裡面有 change.exe 和 data.txt  
+file裡面有 change.exe 和 data.txt  
 change.exe是主程式  
 data.txt是資料庫，裡面記錄說那些字(符號)要更改，又需要改成什麼樣子  
 
@@ -27,3 +26,6 @@ data.txt是資料庫，裡面記錄說那些字(符號)要更改，又需要改�
 中間記得用空白隔開  
 如果不小心把data.txt弄丟了再從建一個就行  
 TXT的編碼是unicode  
+
+
+![test](https://github.com/xxi511/textCorrection/tree/master/image/after.JPG)
