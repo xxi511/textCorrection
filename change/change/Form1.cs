@@ -90,9 +90,9 @@ namespace change
             {
                 novelText.Text += willChange[i];
                 novelText.Text += "\n";
-                if (i > 0 && 
+                if (i > 0 &&
                     !String.Equals(willChange[i - 1], "") &&
-                    !String.Equals(willChange[i],""))
+                    !String.Equals(willChange[i], ""))
                 {
                     //willChange是一行一行的字
                     //如果上面那行不是空白，就是沒分段的意思
@@ -100,7 +100,8 @@ namespace change
                     //如果自己就是空白了，那就不用加了
                     novelText.Text += "\n";
                 }
-                
+                else if (i == 0 && !String.Equals(willChange[1], ""))
+                    novelText.Text += "\n"; //第一行的特別處理
             }
         }
     }
