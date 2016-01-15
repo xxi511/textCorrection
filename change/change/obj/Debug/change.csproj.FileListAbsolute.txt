@@ -7,3 +7,12 @@ C:\Users\you\Desktop\change\change\obj\Debug\change.Properties.Resources.resourc
 C:\Users\you\Desktop\change\change\obj\Debug\change.csproj.GenerateResource.Cache
 C:\Users\you\Desktop\change\change\obj\Debug\change.exe
 C:\Users\you\Desktop\change\change\obj\Debug\change.pdb
+D:\program\Git\project\textCorrection\change\change\bin\Debug\change.exe.config
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.exe
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.pdb
+D:\program\Git\project\textCorrection\change\change\bin\Debug\change.exe
+D:\program\Git\project\textCorrection\change\change\bin\Debug\change.pdb
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.csprojResolveAssemblyReference.cache
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.Form1.resources
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.Properties.Resources.resources
+D:\program\Git\project\textCorrection\change\change\obj\Debug\change.csproj.GenerateResource.Cache
