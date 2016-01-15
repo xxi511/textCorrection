@@ -27,5 +27,6 @@ data.txt是資料庫，裡面記錄說那些字(符號)要更改，又需要改�
 如果不小心把data.txt弄丟了再從建一個就行  
 TXT的編碼是unicode  
 
+![Alt text](https://github.com/xxi511/textCorrection/blob/master/image/before.JPG "Optional title")
+![Alt text](https://github.com/xxi511/textCorrection/blob/master/image/after.JPG "Optional title")
 
-![test](https://github.com/xxi511/textCorrection/tree/master/image/after.JPG)
