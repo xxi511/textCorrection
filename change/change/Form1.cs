@@ -90,9 +90,16 @@ namespace change
             {
                 novelText.Text += willChange[i];
                 novelText.Text += "\n";
-                if (i > 0 &&
-                    !String.Equals(willChange[i - 1], "") &&
-                    !String.Equals(willChange[i], ""))
+
+                String upLine = "";
+                String lineNow = "";
+                if (i > 0)
+                { //把空白行的空白字元消掉，不然判斷太麻煩了
+                    upLine = willChange[i - 1].Trim();
+                    lineNow = willChange[i].Trim();
+                }
+
+                if (i > 0 &&  (!String.Equals(upLine,"") && !String.Equals(lineNow,"")))
                 {
                     //willChange是一行一行的字
                     //如果上面那行不是空白，就是沒分段的意思
