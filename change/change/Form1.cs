@@ -55,28 +55,10 @@ namespace change
             novelText.Text = ""; //處理完過的文字會全部塞在裡面
             for (int i = 0; i < willChange.Length; i++)
             {
-                #region 最前面替換或插入兩個全形空白
-                char[] b = new char[willChange[i].Length];
-                using (StringReader sr = new StringReader(willChange[i]))
-                {
-                    sr.Read(b, 0, willChange[i].Length);
-                    for (int index = 0; index < b.Length; index++)
-                    {
-                        if (!String.Equals(b[index], ' ') && !String.Equals(b[index], '　'))
-                        {
-                            //不是半形空白或全形空白
-                            var tempStr = new StringBuilder(willChange[i]);
-                            int deleteLength = (index == 0) ? 0 : index;
-                            tempStr.Remove(0, deleteLength);
-                            tempStr.Insert(0, "　　");
-                            willChange[i] = tempStr.ToString();
-                            break;
-                        }
-                    }
-
-                }
-                #endregion
-
+               //變成兩個全形空白
+                willChange[i] = willChange[i].Trim();
+                willChange[i] =  willChange[i].Insert(0, "　　");
+                
                 string cor = "";
                 for (int j = 0; j < oldWord.Count; j++)
                 {
