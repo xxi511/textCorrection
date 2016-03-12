@@ -122,17 +122,21 @@
     <value>標楷體, 12pt</value>
   </data>
   <data name="startBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 340</value>
+    <value>361, 510</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="startBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="startBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 34</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="startBtn.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="startBtn.Text" xml:space="preserve">
-    <value>開始</value>
+    <value>校正</value>
   </data>
   <data name="&gt;&gt;startBtn.Name" xml:space="preserve">
     <value>startBtn</value>
@@ -144,13 +148,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;startBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="novelText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>18, 18</value>
+  </data>
+  <data name="novelText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="novelText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 302</value>
+    <value>598, 451</value>
   </data>
   <data name="novelText.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -168,6 +175,60 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;novelText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pasteBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>標楷體, 12pt</value>
+  </data>
+  <data name="pasteBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 510</value>
+  </data>
+  <data name="pasteBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 34</value>
+  </data>
+  <data name="pasteBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pasteBtn.Text" xml:space="preserve">
+    <value>貼上</value>
+  </data>
+  <data name="&gt;&gt;pasteBtn.Name" xml:space="preserve">
+    <value>pasteBtn</value>
+  </data>
+  <data name="&gt;&gt;pasteBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pasteBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pasteBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cutBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>標楷體, 11pt</value>
+  </data>
+  <data name="cutBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 509</value>
+  </data>
+  <data name="cutBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 34</value>
+  </data>
+  <data name="cutBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cutBtn.Text" xml:space="preserve">
+    <value>剪下</value>
+  </data>
+  <data name="&gt;&gt;cutBtn.Name" xml:space="preserve">
+    <value>cutBtn</value>
+  </data>
+  <data name="&gt;&gt;cutBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cutBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cutBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -177,19 +238,22 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+    <value>9, 18</value>
   </data>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 377</value>
+    <value>642, 540</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 415</value>
+    <value>664, 595</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 415</value>
+    <value>664, 595</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.startBtn = new System.Windows.Forms.Button();
             this.novelText = new System.Windows.Forms.RichTextBox();
+            this.pasteBtn = new System.Windows.Forms.Button();
+            this.cutBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startBtn
@@ -45,10 +47,26 @@
             resources.ApplyResources(this.novelText, "novelText");
             this.novelText.Name = "novelText";
             // 
+            // pasteBtn
+            // 
+            resources.ApplyResources(this.pasteBtn, "pasteBtn");
+            this.pasteBtn.Name = "pasteBtn";
+            this.pasteBtn.UseVisualStyleBackColor = true;
+            this.pasteBtn.Click += new System.EventHandler(this.pasteBtn_Click);
+            // 
+            // cutBtn
+            // 
+            resources.ApplyResources(this.cutBtn, "cutBtn");
+            this.cutBtn.Name = "cutBtn";
+            this.cutBtn.UseVisualStyleBackColor = true;
+            this.cutBtn.Click += new System.EventHandler(this.cutBtn_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cutBtn);
+            this.Controls.Add(this.pasteBtn);
             this.Controls.Add(this.novelText);
             this.Controls.Add(this.startBtn);
             this.MaximizeBox = false;
@@ -61,6 +79,8 @@
 
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.RichTextBox novelText;
+        private System.Windows.Forms.Button pasteBtn;
+        private System.Windows.Forms.Button cutBtn;
     }
 }
 
