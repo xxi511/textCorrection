@@ -66,32 +66,44 @@ namespace change
                     willChange[i] = cor;
                 }
             }
-       
 
             for (int i = 0; i < willChange.Length; i++)
             {
-                novelText.Text += willChange[i];
-                novelText.Text += "\n";
+                String upLine = willChange[i].Trim(); //我
+                String downLine =(i == willChange.Length-1)? "": willChange[i + 1].Trim();
 
-                String upLine = "";
-                String lineNow = "";
-                if (i > 0)
-                { //把空白行的空白字元消掉，不然判斷太麻煩了
-                    upLine = willChange[i - 1].Trim();
-                    lineNow = willChange[i].Trim();
-                }
-
-                if (i > 0 &&  (!String.Equals(upLine,"") && !String.Equals(lineNow,"")))
+                if (i < willChange.Length-1)
                 {
-                    //willChange是一行一行的字
-                    //如果上面那行不是空白，就是沒分段的意思
-                    //加一行空白
-                    //如果自己就是空白了，那就不用加了
-                    novelText.Text += "\n";
+                    if (!String.Equals(upLine, "") && String.Equals(downLine, ""))
+                    {
+                        //我是文字，而且下一行是空白
+                        novelText.Text += (i == 0)? upLine: willChange[i];
+                        novelText.Text += "\n";
+                    }
+                    else if (String.Equals(upLine, "") && String.Equals(downLine, ""))
+                    {
+                        //我是空白，下一行也是空白
+                        continue;
+                    }
+                    else if (!String.Equals(upLine, "") && !String.Equals(downLine, ""))
+                    {
+                        //我是文字，下一行也是文字
+                        novelText.Text += (i == 0) ? upLine : willChange[i];
+                        novelText.Text += "\n\n";
+                    }
+                    else if (String.Equals(upLine, "") && !String.Equals(downLine, ""))
+                    { 
+                        //我是空白，下一行是文字
+                        novelText.Text += upLine;
+                        novelText.Text += "\n";
+                    }
                 }
-                else if (i == 0 && !String.Equals(willChange[1], ""))
-                    novelText.Text += "\n"; //第一行的特別處理
+                else
+                {
+                    novelText.Text += willChange[i];
+                }
             }
+
         }
     }
 }
