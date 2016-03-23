@@ -33,6 +33,7 @@
             this.novelText = new System.Windows.Forms.RichTextBox();
             this.pasteBtn = new System.Windows.Forms.Button();
             this.cutBtn = new System.Windows.Forms.Button();
+            this.autoBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startBtn
@@ -61,10 +62,18 @@
             this.cutBtn.UseVisualStyleBackColor = true;
             this.cutBtn.Click += new System.EventHandler(this.cutBtn_Click);
             // 
+            // autoBtn
+            // 
+            resources.ApplyResources(this.autoBtn, "autoBtn");
+            this.autoBtn.Name = "autoBtn";
+            this.autoBtn.UseVisualStyleBackColor = true;
+            this.autoBtn.Click += new System.EventHandler(this.autoBtn_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.autoBtn);
             this.Controls.Add(this.cutBtn);
             this.Controls.Add(this.pasteBtn);
             this.Controls.Add(this.novelText);
@@ -81,6 +90,7 @@
         private System.Windows.Forms.RichTextBox novelText;
         private System.Windows.Forms.Button pasteBtn;
         private System.Windows.Forms.Button cutBtn;
+        private System.Windows.Forms.Button autoBtn;
     }
 }
 

@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;startBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="novelText.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 18</value>
@@ -175,7 +175,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;novelText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pasteBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>標楷體, 12pt</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pasteBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cutBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>標楷體, 11pt</value>
@@ -229,6 +229,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cutBtn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="autoBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>標楷體, 12pt</value>
+  </data>
+  <data name="autoBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 509</value>
+  </data>
+  <data name="autoBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 34</value>
+  </data>
+  <data name="autoBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="autoBtn.Text" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="&gt;&gt;autoBtn.Name" xml:space="preserve">
+    <value>autoBtn</value>
+  </data>
+  <data name="&gt;&gt;autoBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;autoBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;autoBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

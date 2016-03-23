@@ -20,6 +20,36 @@ namespace change
 
         private void startBtn_Click(object sender, EventArgs e)
         {
+            correctFunc();
+        }
+
+        private void pasteBtn_Click(object sender, EventArgs e)
+        {
+            //貼上
+            novelText.Text = Clipboard.GetData(DataFormats.Text).ToString();
+        }
+
+        private void cutBtn_Click(object sender, EventArgs e)
+        {
+            //剪下
+            Clipboard.SetData(DataFormats.Text, novelText.Text);
+            novelText.Text = "";
+        }
+
+        private void autoBtn_Click(object sender, EventArgs e)
+        {
+            //貼上
+            novelText.Text = Clipboard.GetData(DataFormats.Text).ToString();
+
+            correctFunc();
+
+            //剪下
+            Clipboard.SetData(DataFormats.Text, novelText.Text);
+            novelText.Text = "";
+        }
+
+        private void correctFunc()
+        { 
             #region Get Data Detail
             string dataFile = @"data.txt";
             StreamReader data = new StreamReader(dataFile, System.Text.Encoding.Default); //讀取data
@@ -103,22 +133,7 @@ namespace change
                     novelText.Text += willChange[i];
                 }
             }
-
         }
-
-        private void pasteBtn_Click(object sender, EventArgs e)
-        {
-            //貼上
-            novelText.Text = Clipboard.GetData(DataFormats.Text).ToString();
-        }
-
-        private void cutBtn_Click(object sender, EventArgs e)
-        {
-            //剪下
-            Clipboard.SetData(DataFormats.Text, novelText.Text);
-            novelText.Text = "";
-        }
-
 
     }
 }
