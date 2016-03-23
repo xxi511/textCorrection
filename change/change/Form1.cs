@@ -92,8 +92,16 @@ namespace change
                 string cor = "";
                 for (int j = 0; j < oldWord.Count; j++)
                 {
-                    cor = willChange[i].Replace(oldWord[j], newWord[j]);
-                    willChange[i] = cor;
+                    if (newWord[j] == "!@#$%")
+                    {
+                        cor = willChange[i].Replace(oldWord[j], "");
+                        willChange[i] = cor;
+                    }
+                    else
+                    {
+                        cor = willChange[i].Replace(oldWord[j], newWord[j]);
+                        willChange[i] = cor;
+                    }
                 }
             }
 
