@@ -26,25 +26,25 @@ namespace change
         private void pasteBtn_Click(object sender, EventArgs e)
         {
             //貼上
-            novelText.Text = Clipboard.GetData(DataFormats.Text).ToString();
+            novelText.Text = Clipboard.GetData(DataFormats.UnicodeText).ToString();
         }
 
         private void cutBtn_Click(object sender, EventArgs e)
         {
             //剪下
-            Clipboard.SetData(DataFormats.Text, novelText.Text);
+            Clipboard.SetData(DataFormats.UnicodeText, novelText.Text);
             novelText.Text = "";
         }
 
         private void autoBtn_Click(object sender, EventArgs e)
         {
             //貼上
-            novelText.Text = Clipboard.GetData(DataFormats.Text).ToString();
+            novelText.Text = Clipboard.GetData(DataFormats.UnicodeText).ToString();
 
             correctFunc();
 
             //剪下
-            Clipboard.SetData(DataFormats.Text, novelText.Text);
+            Clipboard.SetData(DataFormats.UnicodeText, novelText.Text);
             novelText.Text = "";
         }
 
