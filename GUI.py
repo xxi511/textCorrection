@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-import Tkinter as tk
-import ttk
+# import Tkinter as tk
+# import ttk
+from Tkinter import Text, Tk, END
+from ttk import Frame, Button, Style
 
 
-class Example(ttk.Frame):
+class Example(Frame):
     def __init__(self, parent):
-        ttk.Frame.__init__(self, parent)
+        Frame.__init__(self, parent)
 
         self.grid()
         self.parent = parent
@@ -13,16 +15,16 @@ class Example(ttk.Frame):
 
     def initUI(self):
         self.parent.title("Editer")
-        ttk.Style().configure("TFrame")
+        Style().configure("TFrame")
 
-        self.wordtext = tk.Text(self, height=25, width=71,
+        self.wordtext = Text(self, height=25, width=71,
                                 relief='groove', highlightthickness=0)
         self.wordtext.grid(row=0, column=0, columnspan=4, rowspan=5)
 
-        self.autobtn = tk.Button(self, text='auto', command=self.autoclick)
+        self.autobtn = Button(self, text='auto', command=self.autoclick)
         self.autobtn.grid(row=5, column=0)
 
-        self.alignbtn = tk.Button(self, text='alignment', command=self.alignment)
+        self.alignbtn = Button(self, text='alignment', command=self.alignment)
         self.alignbtn.grid(row=5, column=3)
 
     def paste(self):
@@ -33,16 +35,16 @@ class Example(ttk.Frame):
     def cut(self):
         # Cut word from edit area to clipboard
         self.clipboard_clear()
-        txt = self.wordtext.get('1.0', tk.END)
+        txt = self.wordtext.get('1.0', END)
         self.clipboard_append(txt)
-        self.wordtext.delete('1.0', tk.END)
+        self.wordtext.delete('1.0', END)
 
     def alignment(self):
         # Alignment article in edit area
         # follow the rules
         # 1. only one space line between word lines
         # 2. each line start by two space
-        text = self.wordtext.get('1.0', tk.END)
+        text = self.wordtext.get('1.0', END)
         text = text.replace(' ', '')  # remove whitespace
         text = text.replace(u"　", '')  # remove whitespace
         text = text.splitlines()
@@ -65,12 +67,12 @@ class Example(ttk.Frame):
 
         str = ''.join(modified)
         str = str.replace('\n', '\n\n')
-        self.wordtext.delete('1.0', tk.END)
+        self.wordtext.delete('1.0', END)
         self.wordtext.insert('0.0', str)
 
     def correct(self):
         # correct text, data from data.txt
-        text = self.wordtext.get('1.0', tk.END)
+        text = self.wordtext.get('1.0', END)
         with open('data.txt', 'r') as f:
             for line in f:
                 old, new = line.split()
@@ -78,7 +80,7 @@ class Example(ttk.Frame):
                     new = ''
 
                 text = text.replace(unicode(old, 'utf-8'), unicode(new, 'utf-8'))
-        self.wordtext.delete('1.0', tk.END)
+        self.wordtext.delete('1.0', END)
         self.wordtext.insert('0.0', text)
 
     def autoclick(self):
@@ -89,8 +91,8 @@ class Example(ttk.Frame):
 
 
 def main():
-    root = tk.Tk()
-    # root.resizable(0, 0)
+    root = Tk()
+    root.resizable(0, 0)
     root.geometry("500x400")
     app = Example(root)
     root.mainloop()
