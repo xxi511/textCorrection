@@ -51,7 +51,7 @@ class Example(Frame):
 
         spaceline = False  # This line should be space?
         modified = []
-        for line in text:
+        for idx, line in enumerate(text):
             if line == '':
                 if spaceline:
                     modified.append('\n')
@@ -61,12 +61,13 @@ class Example(Frame):
             else:
                 if spaceline:
                     modified.append('\n')
-                line = u'　　' + line
+                line = u'　　' + line if idx != 0 else line
                 modified.append(line)
                 spaceline = True
 
         str = ''.join(modified)
         str = str.replace('\n', '\n\n')
+        str = str.rstrip('\n')
         self.wordtext.delete('1.0', END)
         self.wordtext.insert('0.0', str)
 
