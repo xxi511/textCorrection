@@ -81,6 +81,8 @@ class Example(Frame):
                     new = ''
 
                 text = text.replace(unicode(old, 'utf-8'), unicode(new, 'utf-8'))
+
+        text = self.bracket_correct(text)
         self.wordtext.delete('1.0', END)
         self.wordtext.insert('0.0', text)
 
@@ -89,6 +91,15 @@ class Example(Frame):
         self.alignment()
         self.correct()
         self.cut()
+
+    def bracket_correct(self, str):
+        import re
+        idx_list = [(m.start(0), m.end(0)) for m in re.finditer(u"』(.*?)』", str, re.U)]
+        tmpstr = list(str)
+        for idx in idx_list:
+            tmpstr[idx[0]] = u"『"
+        return ''.join(tmpstr)
+
 
 
 def main():
