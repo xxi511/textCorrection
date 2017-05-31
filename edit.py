@@ -45,8 +45,9 @@ class Example(Frame):
         # 1. only one space line between word lines
         # 2. each line start by two space
         text = self.wordtext.get('1.0', END)
-        text = text.replace(' ', '')  # remove whitespace
-        text = text.replace("　", '')  # remove whitespace
+        text = text.replace(' ', '')  # normal white
+        text = text.replace(' ', '')  # \xa0
+        text = text.replace('　', '')  # \u3000
         text = text.splitlines()
 
         spaceline = False  # This line should be space?
