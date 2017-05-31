@@ -1,4 +1,7 @@
-# Ubuntu
+python 3.x
+pyinstaller目前只支援python 3.5
+
+# Ubuntu, windows
 `pyinstaller -F -n Editer -w GUI.py`
 
 # Mac
