@@ -12,39 +12,38 @@ class Example(Frame):
         self.grid()
         self.parent = parent
         self.initUI()
+        self.word = ""
 
     def initUI(self):
         self.parent.title("Editer")
         Style().configure("TFrame")
 
-        self.wordtext = Text(self, height=25, width=71,
-                                relief='groove', highlightthickness=0)
-        self.wordtext.grid(row=0, column=0, columnspan=4, rowspan=5)
+        # self.wordtext = Text(self, height=25, width=71,
+        #                         relief='groove', highlightthickness=0)
+        # self.wordtext.grid(row=0, column=0, columnspan=4, rowspan=5)
 
         self.autobtn = Button(self, text='auto', command=self.autoclick)
-        self.autobtn.grid(row=5, column=0)
+        self.autobtn.grid(row=0, column=0)
 
         self.alignbtn = Button(self, text='alignment', command=self.alignment)
-        self.alignbtn.grid(row=5, column=3)
+        self.alignbtn.grid(row=0, column=1)
 
     def paste(self):
-        # Paste clipboard word to edit area
-        txt = self.clipboard_get()
-        self.wordtext.insert('0.0', txt)
+        # Paste clipboard word to self.word
+        self.word = self.clipboard_get()
 
     def cut(self):
         # Cut word from edit area to clipboard
         self.clipboard_clear()
-        txt = self.wordtext.get('1.0', END)
+        txt = self.word
         self.clipboard_append(txt)
-        self.wordtext.delete('1.0', END)
 
     def alignment(self):
         # Alignment article in edit area
         # follow the rules
         # 1. only one space line between word lines
         # 2. each line start by two space
-        text = self.wordtext.get('1.0', END)
+        text = self.word
         text = text.replace(' ', '')  # normal white
         text = text.replace(' ', '')  # \xa0
         text = text.replace('　', '')  # \u3000
@@ -69,12 +68,11 @@ class Example(Frame):
         str = ''.join(modified)
         str = str.replace('\n', '\n\n')
         str = str.rstrip('\n')
-        self.wordtext.delete('1.0', END)
-        self.wordtext.insert('0.0', str)
+        self.word = str
 
     def correct(self):
         # correct text, data from data.txt
-        text = self.wordtext.get('1.0', END)
+        text = self.word
         with open('data.txt', 'r', encoding='utf-8-sig') as f:
             for line in f:
                 old, new = line.split()
@@ -84,8 +82,7 @@ class Example(Frame):
                 text = text.replace(old, new)
 
         text = self.bracket_correct(text)
-        self.wordtext.delete('1.0', END)
-        self.wordtext.insert('0.0', text)
+        self.word = text
 
     def autoclick(self):
         self.paste()
@@ -106,7 +103,8 @@ class Example(Frame):
 def main():
     root = Tk()
     root.resizable(0, 0)
-    root.geometry("500x400")
+    root.geometry("170x25")
+    root.attributes("-topmost", True)
     app = Example(root)
     root.mainloop()
 
