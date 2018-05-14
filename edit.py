@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # import Tkinter as tk
 # import ttk
-from tkinter import Text, Tk, END
+from tkinter import Tk
 from tkinter.ttk import Frame, Button, Style
 
 
@@ -18,14 +18,10 @@ class Example(Frame):
         self.parent.title("Editer")
         Style().configure("TFrame")
 
-        # self.wordtext = Text(self, height=25, width=71,
-        #                         relief='groove', highlightthickness=0)
-        # self.wordtext.grid(row=0, column=0, columnspan=4, rowspan=5)
-
         self.autobtn = Button(self, text='auto', command=self.autoclick)
         self.autobtn.grid(row=0, column=0)
 
-        self.alignbtn = Button(self, text='alignment', command=self.alignment)
+        self.alignbtn = Button(self, text='alignment', command=self.clickAlignment)
         self.alignbtn.grid(row=0, column=1)
 
     def paste(self):
@@ -44,31 +40,18 @@ class Example(Frame):
         # 1. only one space line between word lines
         # 2. each line start by two space
         text = self.word
-        text = text.replace(' ', '')  # normal white
-        text = text.replace(' ', '')  # \xa0
-        text = text.replace('　', '')  # \u3000
-        text = text.splitlines()
+        text = text.split('\n')
 
-        spaceline = False  # This line should be space?
         modified = []
         for idx, line in enumerate(text):
-            if line == '':
-                if spaceline:
-                    modified.append('\n')
-                    spaceline = False
-                else:
-                    continue
-            else:
-                if spaceline:
-                    modified.append('\n')
+            line = line.strip()
+            if line is not '':
+                line = line + '\n\n'
                 line = '　　' + line if idx != 0 else line
                 modified.append(line)
-                spaceline = True
 
         str = ''.join(modified)
-        str = str.replace('\n', '\n\n')
-        str = str.rstrip('\n')
-        self.word = str
+        self.word = str.rstrip('\n')
 
     def correct(self):
         # correct text, data from data.txt
@@ -79,9 +62,9 @@ class Example(Frame):
                 if new == '!@#$%':
                     new = ''
 
-                text = text.replace(old, new)
+                if old in text:
+                    text = text.replace(old, new)
 
-        text = self.bracket_correct(text)
         self.word = text
 
     def autoclick(self):
@@ -90,15 +73,10 @@ class Example(Frame):
         self.correct()
         self.cut()
 
-    def bracket_correct(self, str):
-        import re
-        idx_list = [(m.start(0), m.end(0)) for m in re.finditer("』(.*?)』", str, re.U)]
-        tmpstr = list(str)
-        for idx in idx_list:
-            tmpstr[idx[0]] = "『"
-        return ''.join(tmpstr)
-
-
+    def clickAlignment(self):
+        self.paste()
+        self.alignment()
+        self.cut()
 
 def main():
     root = Tk()
