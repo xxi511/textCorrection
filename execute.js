@@ -1,7 +1,8 @@
 edit();
 
 function edit() {
-    let textArea = document.getElementById("e_textarea");
+    document.getElementById("e_switchercheck").click();
+    let textArea = document.getElementsByName("message")[0];
     if (textArea) {
         let lines = articleSplit(textArea.value);
         let article = compose(lines);
@@ -59,7 +60,8 @@ function correct(dic, article) {
         let newStr = val[1];
         if (newArticle.includes(oldStr)) {
             let _new = newStr === "!@#$%" ? "" : newStr;
-            newArticle = newArticle.replaceAll(oldStr, _new);
+            let _old = oldStr.replace(/\*/g, "\\*");
+            newArticle = newArticle.replaceAll(_old, _new);
         }
     });
     return newArticle;

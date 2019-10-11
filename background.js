@@ -13,8 +13,8 @@ function setNewRule() {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
                     pageUrl: {
-                        hostEquals: "ck101.com",
-                        urlContains: "action=edit",
+                        hostEquals: "woodo.epizy.com",
+                        urlContains: "action",
                     },
                 }),
             ],
